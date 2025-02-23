@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <script src="/socket.io/socket.io.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    #log { max-height: 80vh; overflow-y: auto; }
+    p { margin: 5px 0; }
+  </style>
+</head>
+<body>
+  <h1>Admin Dashboard</h1>
+  <div id="log"></div>
+  <script>
+    const socket = io();
+    const log = document.getElementById('log');
+    socket.on('chat', (data) => {
+      const p = document.createElement('p');
+      p.textContent = `IP: ${data.ip} | Prompt: ${data.prompt} | Response: ${data.response}`;
+      log.appendChild(p);
+    });
+  </script>
+</body>
+</html>

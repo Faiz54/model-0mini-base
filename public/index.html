@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Model-0mini</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
+  <!-- Include TensorFlow.js if needed -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <!-- Include pdf.js for PDF text extraction -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+</head>
+<body>
+  <!-- Animated Grid Background -->
+  <div class="grid-container"></div>
+  
+  <!-- Title -->
+  <h1 class="title">Model‑0mini</h1>
+  
+  <!-- Chat History -->
+  <div class="llm-output"></div>
+  
+  <!-- Attachment Preview Section (hidden by default) -->
+  <div id="attachment-preview" class="attachment-preview" style="display: none;">
+    <div id="attachment-info"></div>
+    <input type="text" id="attachment-prompt" placeholder="Enter prompt for the attachment (optional)">
+    <button id="send-attachment-btn">Send Attachment</button>
+  </div>
+  
+  <!-- Input Container with Chat Input and File Attachment Icon -->
+  <div class="input-container">
+    <input type="text" placeholder="Enter text here...">
+    <!-- Paperclip icon button using inline SVG -->
+    <button id="file-attach-btn" title="Attach a document">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="24" height="24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828L20 9.828a4 4 0 10-5.656-5.656L7 11.172" />
+      </svg>
+    </button>
+    <!-- Hidden file input for attachments -->
+    <input type="file" id="file-upload" accept="application/pdf,image/*" style="display: none;">
+  </div>
+  
+  <!-- Demo Notification -->
+  <div id="demo-notification">
+    <span>Deep Learning Model Active</span>
+    <span id="demo-close">✕</span>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
